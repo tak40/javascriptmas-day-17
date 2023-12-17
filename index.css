@@ -1,8 +1,61 @@
-html, body {
+/** @format */
+
+* {
+    box-sizing: border-box;
+    /* outline: dotted 1px red; */
+}
+
+body {
+    display: grid;
+    place-content: center;
+    height: 100vh;
     margin: 0;
     padding: 0;
+    background-image: url(background.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 :root {
     --bg-word: #5134ff;
+}
+
+@keyframes rotate-words {
+    0%,
+    100% {
+        content: 'Music 🎵';
+    }
+    25% {
+        content: 'Coding 💻';
+    }
+    50% {
+        content: 'Coffee ☕';
+    }
+    75% {
+        content: 'Scrimba 🫶🏼';
+    }
+}
+
+.container h1::after {
+    display: inline-block;
+    margin-left: 10px;
+    content: 'Music'; 
+    color: #388e3c;
+    background-color: rgba(255, 255, 255, 0.5); 
+    padding: 0.25em 0.5em; 
+    border-radius: 10px; 
+    animation: rotate-words 8s infinite;
+}
+
+.container {
+    position: relative;
+}
+
+.container h1 {
+    overflow: hidden;
+    font-family: 'Dancing Script', cursive;
+    color: #d32f2f;
+    position: relative;
+    overflow: hidden;
 }
